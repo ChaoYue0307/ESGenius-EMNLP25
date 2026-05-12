@@ -144,6 +144,7 @@ def build_prompt(row, dataset_name=None):
     """
     Standard prompt builder used by your zero-shot pipeline.
     """
+    dataset_name = dataset_name or ""
     if dataset_name and '775' in dataset_name and 'lowest_200' not in dataset_name:
         prompt = (
             "You are an expert in LEED Green Associate from US Green Council. Answer the question with a single letter or a required number (Choose X) of distinct letters in alphabetical order. Each option content is case-sensitive.\n\n"
@@ -247,6 +248,16 @@ def build_prompt(row, dataset_name=None):
     elif 'ESGenius' in dataset_name:
         prompt = (
             "You are an expert in ESG (Environmental, Social, Governance) and Sustainability related topics. Answer the question with a single letter based on authoritative knowledge. Each option content is case-sensitive.\n\n"
+        )
+        prompt += f"Question: {row.get('query', '')}\n"
+        prompt += "Options:\n"
+        for option in ['A', 'B', 'C', 'D', 'Z']:
+            option_text = row.get(option)
+            if pd.notna(option_text):
+                prompt += f"{option}: {option_text}\n"
+    else:
+        prompt = (
+            "You are an expert in ESG (Environmental, Social, Governance) and sustainability topics. Answer the question with a single letter based on authoritative knowledge. Each option content is case-sensitive.\n\n"
         )
         prompt += f"Question: {row.get('query', '')}\n"
         prompt += "Options:\n"

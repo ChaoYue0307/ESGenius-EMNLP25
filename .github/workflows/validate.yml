@@ -1,0 +1,18 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile Python files
+        run: python -m py_compile evaluation_utils.py eval_opensource.py eval_opensource_rag.py eval_qwen_api.py
+      - name: Check static site references
+        run: python scripts/check_static_site.py

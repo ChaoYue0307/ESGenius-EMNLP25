@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import argparse
 import os
 import sys
 import time
@@ -15,6 +16,20 @@ sys.path.append(os.getcwd())
 
 # Import shared components from the utility file
 import evaluation_utils as utils
+
+DEFAULT_RAG_MODELS = [
+    'Qwen/Qwen2.5-32B',
+]
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Evaluate local Hugging Face models with ESGenius reference snippets.")
+    parser.add_argument("--dataset", default="ESGenius_w_ref_1136q.csv", help="Reference CSV file in the data directory.")
+    parser.add_argument("--models", nargs="+", help="One or more Hugging Face model IDs. Defaults to the curated RAG list.")
+    parser.add_argument("--results-folder", default="results", help="Directory for Excel result workbooks.")
+    parser.add_argument("--limit", type=int, help="Evaluate only the first N rows for a smoke test.")
+    parser.add_argument("--force", action="store_true", help="Re-run even when a result workbook already exists.")
+    return parser.parse_args()
 
 # =====================================================================
 # ------ Open Source Model RAG Evaluation Function ---------------------
@@ -262,6 +277,7 @@ def main():
     NOTE: This script is SEPARATE from the zero-shot pipeline
     and will not affect your existing zero-shot code.
     """
+    args = parse_args()
     script_start_time = time.time()
     print(f"--- Starting Open Source RAG Evaluation Script [{time.strftime('%Y-%m-%d %H:%M:%S')}] ---")
 
@@ -269,64 +285,14 @@ def main():
     utils.perform_hf_login()
     utils.load_model_info()
 
-    # filename = 'IPCC_balanced_w_ref_288q.csv'
-    # filename = 'GRI_balanced_w_ref_230q.csv'
-    # filename = 'GRI_balanced_230q.csv'
-    filename = 'ESGenius_balanced_w_ref_1136q.csv'
-    df, dataset_name = utils.load_dataset(filename=filename)
+    df, dataset_name = utils.load_dataset(filename=args.dataset)
     if df is None:
         return
+    if args.limit:
+        df = df.head(args.limit).copy()
+        dataset_name = f"{dataset_name}_first{args.limit}"
 
-    # Example: You can define a different list of models for RAG
-    rag_models = [
-        # 'deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B',
-        # 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B',
-        # 'deepseek-ai/DeepSeek-R1-Distill-Llama-8B',
-        # 'deepseek-ai/DeepSeek-R1-Distill-Qwen-14B',
-        # 'deepseek-ai/DeepSeek-R1-Distill-Qwen-32B',
-        # 'deepseek-ai/DeepSeek-R1-Distill-Llama-70B',
-        # 'google/gemma-3-1b-pt',
-        # 'google/gemma-3-1b-it',
-        # 'google/gemma-3-4b-pt',
-        # 'google/gemma-3-4b-it',
-        # 'google/gemma-3-12b-pt',
-        # 'google/gemma-3-12b-it',
-        # 'google/gemma-3-27b-pt',
-        # 'google/gemma-3-27b-it',
-        # 'meta-llama/Meta-Llama-3-8B',
-        # 'meta-llama/Meta-Llama-3-8B-Instruct',
-        # 'meta-llama/Llama-3.1-8B',
-        # 'meta-llama/Llama-3.1-8B-Instruct',
-        # 'meta-llama/Llama-3.2-1B',
-        # 'meta-llama/Llama-3.2-1B-Instruct',
-        # 'meta-llama/Llama-3.2-3B',
-        # 'meta-llama/Llama-3.2-3B-Instruct',
-        # 'meta-llama/Llama-3.3-70B-Instruct',
-        # 'Qwen/Qwen2.5-0.5B',
-        # 'Qwen/Qwen2.5-0.5B-Instruct',
-        # 'Qwen/Qwen2.5-1.5B',
-        # 'Qwen/Qwen2.5-1.5B-Instruct',
-        # 'Qwen/Qwen2.5-3B',
-        # 'Qwen/Qwen2.5-3B-Instruct',
-        # 'Qwen/Qwen2.5-7B',
-        # 'Qwen/Qwen2.5-7B-Instruct',
-        # 'Qwen/Qwen2.5-14B',
-        # 'Qwen/Qwen2.5-14B-Instruct',
-        'Qwen/Qwen2.5-32B',
-        # 'Qwen/Qwen2.5-32B-Instruct',
-        # 'Qwen/Qwen2.5-72B',
-        # 'Qwen/Qwen2.5-72B-Instruct',
-        # 'Qwen/Qwen2.5-7B-Instruct-1M',
-        # 'Qwen/Qwen2.5-14B-Instruct-1M', 
-        # 'Qwen/QwQ-32B',
-        # 'Qwen/Qwen2.5-Omni-7B', # cannot work with this model
-        # 'Qwen/Qwen3-0.6B',
-        # 'Qwen/Qwen3-1.7B',
-        # 'Qwen/Qwen3-4B',
-        # 'Qwen/Qwen3-8B',
-        # 'Qwen/Qwen3-14B',
-        # 'Qwen/Qwen3-32B', 
-    ]
+    rag_models = args.models if args.models else DEFAULT_RAG_MODELS
 
     if not rag_models:
         print("No RAG models defined for evaluation. Exiting.")
@@ -339,13 +305,13 @@ def main():
         model_start_time = time.time()
 
         # Skip evaluation if a results file already exists for this model
-        if utils.check_if_skip_model(model_name, dataset_name, results_folder="results", rag=True):
+        if not args.force and utils.check_if_skip_model(model_name, dataset_name, results_folder=args.results_folder, rag=True):
             continue
 
         models_evaluated_count += 1
         print(f"Evaluating '{model_name}' (RAG)...")
         # Initialize evaluation DataFrame and dedicated Excel file for the current model
-        eval_df, evaluation_excel_file = utils.load_or_initialize_eval_df(df, dataset_name, model_name, results_folder="results", rag=True)
+        eval_df, evaluation_excel_file = utils.load_or_initialize_eval_df(df, dataset_name, model_name, results_folder=args.results_folder, rag=True)
         if eval_df is None:
             continue
 

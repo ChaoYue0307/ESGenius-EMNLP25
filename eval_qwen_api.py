@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import argparse
 import os
 import sys
 import time
@@ -13,6 +14,20 @@ sys.path.append(os.getcwd())
 
 # Import shared components from the utility file
 import evaluation_utils as utils
+
+DEFAULT_QWEN_MODELS = [
+    'Qwen2.5-Max',
+]
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Evaluate Dashscope-compatible Qwen models on ESGenius.")
+    parser.add_argument("--dataset", default="ESGenius_1136q.csv", help="CSV file in the data directory.")
+    parser.add_argument("--models", nargs="+", help="One or more Qwen model names. Defaults to Qwen2.5-Max.")
+    parser.add_argument("--results-folder", default="results", help="Directory for Excel result workbooks.")
+    parser.add_argument("--limit", type=int, help="Evaluate only the first N rows for a smoke test.")
+    parser.add_argument("--force", action="store_true", help="Re-run even when a result workbook already exists.")
+    return parser.parse_args()
 
 # =====================================================================
 # --------- Qwen (Dashscope) API Model Evaluation Functions -----------
@@ -145,6 +160,7 @@ def evaluate_qwen_api(df, model_name, dataset_name, eval_df, evaluation_excel_fi
 
 def main():
     """Main function for evaluating Qwen (Dashscope) API models."""
+    args = parse_args()
     script_start_time = time.time()
     current_time = time.strftime('%Y-%m-%d %H:%M:%S %Z', time.localtime())
     print(f"--- Starting Qwen API Evaluation Script [{current_time}] ---")
@@ -152,17 +168,14 @@ def main():
     utils.set_random_seeds(utils.SEED)
     utils.load_model_info()
 
-
-    filename = 'until_id_83407_8868q.csv'
-    df, dataset_name = utils.load_dataset(filename=filename)
+    df, dataset_name = utils.load_dataset(filename=args.dataset)
     if df is None:
         return
+    if args.limit:
+        df = df.head(args.limit).copy()
+        dataset_name = f"{dataset_name}_first{args.limit}"
 
-    # --- Define ONLY Qwen API Models ---
-    qwen_models = [
-        'Qwen2.5-Max',  # Will be mapped to an API identifier in query_qwen_api if needed
-        # Add other Qwen models like 'qwen-plus', 'qwen-max-longcontext' etc.
-    ]
+    qwen_models = args.models if args.models else DEFAULT_QWEN_MODELS
     if not qwen_models:
         print("No Qwen models defined for evaluation. Exiting.")
         return
@@ -170,20 +183,22 @@ def main():
 
     # --- Evaluate Models ---
     models_evaluated_count = 0
+    last_evaluation_excel_file = None
     for model_index, model_name in enumerate(qwen_models):
         print(f"\n--- Checking Qwen API Model {model_index+1}/{len(qwen_models)}: {model_name} ---")
         model_start_time = time.time()
 
         # Skip evaluation if dedicated results file already exists for this model
-        if utils.check_if_skip_model(model_name, dataset_name, results_folder="results"):
+        if not args.force and utils.check_if_skip_model(model_name, dataset_name, results_folder=args.results_folder):
             continue
 
         models_evaluated_count += 1
         print(f"Evaluating '{model_name}' (Qwen API)...")
         # Load or initialize per-model evaluation DataFrame and Excel file
-        eval_df, evaluation_excel_file = utils.load_or_initialize_eval_df(df, dataset_name, model_name, results_folder="results")
+        eval_df, evaluation_excel_file = utils.load_or_initialize_eval_df(df, dataset_name, model_name, results_folder=args.results_folder)
         if eval_df is None:
             continue
+        last_evaluation_excel_file = evaluation_excel_file
 
         try:
             eval_df = evaluate_qwen_api(df, model_name, dataset_name, eval_df, evaluation_excel_file)
@@ -210,7 +225,8 @@ def main():
     else:
         print(f"{models_evaluated_count} Qwen model(s) evaluated.")
     print(f"Total execution time: {script_end_time - script_start_time:.2f} seconds")
-    print(f"Results file updated: {evaluation_excel_file}")
+    if last_evaluation_excel_file:
+        print(f"Results file updated: {last_evaluation_excel_file}")
 
 if __name__ == '__main__':
     main()

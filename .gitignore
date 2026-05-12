@@ -1,0 +1,18 @@
+.DS_Store
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Local experiment outputs
+results/*.xlsx
+results/*.csv
+results/*.json
+checkpoints/
+models/
+runs/
+wandb/

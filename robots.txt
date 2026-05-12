@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://angel-ntu.github.io/ESGenius/sitemap.xml
