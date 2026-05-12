@@ -30,7 +30,7 @@
       <a href="#results">Results</a>
       <a href="#code">Code</a>
       <a href="https://aclanthology.org/2025.emnlp-main.739/">Paper</a>
-      <a href="heatmap.html">Heatmap</a>
+      <a href="#heatmap">Heatmap</a>
     </nav>
   </header>
 
@@ -133,6 +133,33 @@
             <img id="figure-image" src="figures/main_results.png" alt="Main ESGenius benchmark results">
             <figcaption id="figure-caption">Main ESGenius benchmark results.</figcaption>
           </figure>
+        </div>
+
+        <div id="heatmap" class="heatmap-home" aria-labelledby="heatmap-title">
+          <div class="heatmap-home-copy">
+            <p class="section-label">Interactive Heatmap</p>
+            <h3 id="heatmap-title">Inspect every model-question outcome without leaving the benchmark story.</h3>
+            <p>The full report covers 50 evaluated models across 1,136 ESGenius questions, sorted by model rank and question difficulty for fast error-pattern analysis.</p>
+            <div class="heatmap-legend" aria-label="Heatmap color key">
+              <span><i class="key-correct"></i>Correct</span>
+              <span><i class="key-wrong"></i>Wrong</span>
+              <span><i class="key-invalid"></i>Invalid</span>
+              <span><i class="key-unsure"></i>Not sure</span>
+              <span><i class="key-missing"></i>Missing</span>
+            </div>
+            <a class="button button-dark" href="heatmap.html">Open full Plotly heatmap</a>
+          </div>
+          <a class="heatmap-preview" href="heatmap.html" aria-label="Open the full ESGenius interactive heatmap report">
+            <span class="heatmap-preview-top">
+              <strong>50 models</strong>
+              <span>ranked top to bottom</span>
+            </span>
+            <span class="heatmap-preview-grid" aria-hidden="true"></span>
+            <span class="heatmap-preview-bottom">
+              <span>Hardest questions</span>
+              <span>Easiest questions</span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
