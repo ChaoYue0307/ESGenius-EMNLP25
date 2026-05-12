@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use ESGenius, please cite the paper and repository."
+message: "If you use ESGenius, please cite the EMNLP 2025 paper and repository."
 title: "ESGenius: Benchmarking LLMs on Environmental, Social, and Governance (ESG) and Sustainability Knowledge"
 authors:
   - family-names: He
@@ -26,8 +26,46 @@ authors:
     given-names: Wei
   - family-names: Miao
     given-names: Chunyan
-date-released: "2025-06-02"
-doi: 10.48550/arXiv.2506.01646
-url: "https://github.com/ANGEL-NTU/ESGenius"
+date-released: "2025-11-01"
+doi: 10.18653/v1/2025.emnlp-main.739
+url: "https://aclanthology.org/2025.emnlp-main.739/"
 repository-code: "https://github.com/ANGEL-NTU/ESGenius"
 license: Apache-2.0
+preferred-citation:
+  type: conference-paper
+  title: "ESGenius: Benchmarking LLMs on Environmental, Social, and Governance (ESG) and Sustainability Knowledge"
+  authors:
+    - family-names: He
+      given-names: Chaoyue
+    - family-names: Zhou
+      given-names: Xin
+    - family-names: Wu
+      given-names: Yi
+    - family-names: Yu
+      given-names: Xinjia
+    - family-names: Zhang
+      given-names: Yan
+    - family-names: Zhang
+      given-names: Lei
+    - family-names: Wang
+      given-names: Di
+    - family-names: Lyu
+      given-names: Shengfei
+    - family-names: Xu
+      given-names: Hong
+    - family-names: Xiaoqiao
+      given-names: Wang
+    - family-names: Liu
+      given-names: Wei
+    - family-names: Miao
+      given-names: Chunyan
+  collection-title: "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing"
+  conference: "EMNLP 2025"
+  location: "Suzhou, China"
+  publisher: "Association for Computational Linguistics"
+  doi: 10.18653/v1/2025.emnlp-main.739
+  url: "https://aclanthology.org/2025.emnlp-main.739/"
+  year: 2025
+  month: 11
+  start: 14612
+  end: 14653

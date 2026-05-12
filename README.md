@@ -1,8 +1,8 @@
 # ESGenius
 
-[Website](https://angel-ntu.github.io/ESGenius/) | [Interactive heatmap](https://angel-ntu.github.io/ESGenius/heatmap.html) | [Paper](https://arxiv.org/pdf/2506.01646) | [License](LICENSE)
+[Website](https://angel-ntu.github.io/ESGenius/) | [Interactive heatmap](https://angel-ntu.github.io/ESGenius/heatmap.html) | [EMNLP 2025 paper](https://aclanthology.org/2025.emnlp-main.739/) | [License](LICENSE)
 
-ESGenius is a benchmark for evaluating large language models on Environmental, Social, and Governance (ESG) and sustainability knowledge. It includes 1,136 multiple-choice questions, source-linked reference data, evaluation scripts, result figures, and a lightweight GitHub Pages site.
+ESGenius is a benchmark for evaluating large language models on Environmental, Social, and Governance (ESG) and sustainability knowledge. It appears in the EMNLP 2025 Main Conference as an Oral paper and was nominated for the Resource and Theme Paper Awards (Top 1%). The repository includes 1,136 multiple-choice questions, source-linked reference data, evaluation scripts, result figures, and a lightweight GitHub Pages site.
 
 ## Highlights
 
@@ -11,6 +11,7 @@ ESGenius is a benchmark for evaluating large language models on Environmental, S
 - Coverage across IPCC, GRI, SASB, ISO, IFRS/ISSB, TCFD, CDP, and related sustainability sources.
 - Evaluation paths for local Hugging Face models, simple reference-aware RAG, and Dashscope-compatible Qwen APIs.
 - Published visual results and a full interactive Plotly heatmap for 50 evaluated models.
+- EMNLP 2025 Main Conference Oral; nominated for Resource and Theme Paper Awards (Top 1%).
 
 ## Repository Layout
 
@@ -119,16 +120,36 @@ Additional figures are available in `figures/` and on the project website.
 
 ## Citation
 
-If you use ESGenius, please cite the paper and repository metadata in [CITATION.cff](CITATION.cff).
+If you use ESGenius, please cite the EMNLP 2025 paper and repository metadata in [CITATION.cff](CITATION.cff).
 
 ```bibtex
-@misc{he2025esgenius,
-  title = {ESGenius: Benchmarking LLMs on Environmental, Social, and Governance (ESG) and Sustainability Knowledge},
-  author = {He, Chaoyue and Zhou, Xin and Wu, Yi and Yu, Xinjia and Zhang, Yan and Zhang, Lei and Wang, Di and Lyu, Shengfei and Xu, Hong and Wang, Xiaoqiao and Liu, Wei and Miao, Chunyan},
-  year = {2025},
-  eprint = {2506.01646},
-  archivePrefix = {arXiv},
-  primaryClass = {cs.CL}
+@inproceedings{he-etal-2025-esgenius,
+    title = "{ESG}enius: Benchmarking {LLM}s on Environmental, Social, and Governance ({ESG}) and Sustainability Knowledge",
+    author = "He, Chaoyue  and
+      Zhou, Xin  and
+      Wu, Yi  and
+      Yu, Xinjia  and
+      Zhang, Yan  and
+      Zhang, Lei  and
+      Wang, Di  and
+      Lyu, Shengfei  and
+      Xu, Hong  and
+      Xiaoqiao, Wang  and
+      Liu, Wei  and
+      Miao, Chunyan",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.739/",
+    doi = "10.18653/v1/2025.emnlp-main.739",
+    pages = "14612--14653",
+    ISBN = "979-8-89176-332-6"
 }
 ```
 
