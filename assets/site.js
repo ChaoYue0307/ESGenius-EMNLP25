@@ -42,3 +42,27 @@ figureButtons.forEach((button) => {
     figureCaption.textContent = selected.caption;
   });
 });
+
+const copyButtons = document.querySelectorAll("[data-copy-target]");
+
+copyButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    const target = document.getElementById(button.dataset.copyTarget);
+    const text = target?.textContent?.trim();
+    if (!text) return;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      const previousLabel = button.textContent;
+      button.textContent = "Copied";
+      button.classList.add("is-copied");
+      window.setTimeout(() => {
+        button.textContent = previousLabel;
+        button.classList.remove("is-copied");
+      }, 1800);
+    } catch {
+      button.textContent = "Select BibTeX";
+      target.focus?.();
+    }
+  });
+});
