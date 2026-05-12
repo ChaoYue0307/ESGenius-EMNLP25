@@ -226,10 +226,27 @@ a {
 .publication-strip-inner {
   max-width: var(--max);
   display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.3fr) auto;
-  gap: 24px;
-  align-items: center;
+  grid-template-columns: minmax(0, 0.98fr) minmax(420px, 0.88fr);
+  gap: 32px;
+  align-items: start;
   margin: 0 auto;
+}
+
+.paper-summary {
+  min-width: 0;
+}
+
+.paper-title {
+  max-width: 720px;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.paper-status-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  gap: 14px;
+  margin-top: 24px;
 }
 
 .publication-card {
@@ -299,6 +316,13 @@ a {
 .publication-link:focus-visible {
   border-color: var(--green);
   color: var(--green);
+}
+
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 .stats-band {
@@ -706,31 +730,16 @@ code {
   overflow-x: auto;
 }
 
-.resources-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(420px, 0.95fr);
-  gap: 48px;
-  align-items: start;
-}
-
-.resources-side {
-  display: grid;
-  gap: 18px;
-  min-width: 0;
-}
-
-.resource-list {
-  display: grid;
-  gap: 10px;
-  min-width: 0;
-}
-
 .citation-panel {
   min-width: 0;
   padding: 20px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--soft);
+}
+
+.citation-panel-top .citation-code {
+  max-height: 310px;
 }
 
 .citation-panel-header {
@@ -783,6 +792,19 @@ code {
   line-height: 1.5;
   overflow: auto;
   white-space: pre;
+}
+
+.resources-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.resource-list {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
 }
 
 .site-footer {
@@ -842,6 +864,7 @@ code {
   .workflow-grid,
   .heatmap-home,
   .publication-strip-inner,
+  .paper-status-grid,
   .resources-layout {
     grid-template-columns: 1fr;
   }
@@ -852,6 +875,10 @@ code {
 
   .publication-link {
     width: 100%;
+  }
+
+  .paper-title {
+    font-size: 30px;
   }
 
   .stat {
@@ -924,6 +951,10 @@ code {
 
   .copy-button {
     width: 100%;
+  }
+
+  .paper-title {
+    font-size: 28px;
   }
 
   .section {
