@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/esgenius-logo.png" alt="ESGenius logo" width="120">
+</p>
+
 # ESGenius
 
 [Website](https://angel-ntu.github.io/ESGenius/) | [Interactive heatmap](https://angel-ntu.github.io/ESGenius/heatmap.html) | [EMNLP 2025 paper](https://aclanthology.org/2025.emnlp-main.739/) | [License](LICENSE)
@@ -19,7 +23,7 @@ ESGenius is a benchmark for evaluating large language models on Environmental, S
 .
 |-- index.html                         # Fast project homepage for GitHub Pages
 |-- heatmap.html                       # Full interactive Plotly heatmap report
-|-- assets/                            # Homepage CSS and JavaScript
+|-- assets/                            # Homepage CSS, JavaScript, and logo assets
 |-- data/
 |   |-- ESGenius_1136q.csv             # Plain question set
 |   |-- ESGenius_1136q.json            # Plain question set in JSON
