@@ -21,6 +21,14 @@
   <a href="data/README.md">Dataset Docs</a>
 </p>
 
+<p align="center">
+  <a href="https://aclanthology.org/2025.emnlp-main.739/"><img alt="EMNLP 2025 Main Oral" src="https://img.shields.io/badge/EMNLP%202025-Main%20Oral-2f7d58"></a>
+  <a href="https://angel-ntu.github.io/ESGenius/"><img alt="Website" src="https://img.shields.io/badge/Website-GitHub%20Pages-366f8a"></a>
+  <a href="data/ESGenius_1136q.csv"><img alt="Dataset size" src="https://img.shields.io/badge/Dataset-1%2C136%20questions-c78a2e"></a>
+  <a href="https://angel-ntu.github.io/ESGenius/heatmap.html"><img alt="Evaluated models" src="https://img.shields.io/badge/Models-50%20evaluated-12372f"></a>
+  <a href="LICENSE"><img alt="License Apache 2.0" src="https://img.shields.io/badge/License-Apache--2.0-blue"></a>
+</p>
+
 ---
 
 ESGenius is a multiple-choice benchmark for evaluating whether large language models understand ESG and sustainability knowledge at the level needed for standards-aware reasoning. It contains expert-written questions, source-grounded references, reproducible evaluation scripts, published result figures, and a lightweight GitHub Pages site for fast inspection.
@@ -35,7 +43,20 @@ ESGenius is a multiple-choice benchmark for evaluating whether large language mo
 | Answer protocol | `A`, `B`, `C`, `D`, plus `Z` for "Not sure" |
 | Model results | 50 evaluated models with ranking figures and a question-level heatmap |
 | References | Source document names, page references, and supporting excerpts in the reference CSV |
+| Website | [angel-ntu.github.io/ESGenius](https://angel-ntu.github.io/ESGenius/) |
+| Topics | `llm`, `benchmark`, `esg`, `sustainability`, `nlp`, `evaluation`, `dataset`, `emnlp-2025` |
 | License | Apache 2.0 |
+
+## Recommended Entry Points
+
+| Goal | Start here |
+| --- | --- |
+| Read the paper | [ACL Anthology record](https://aclanthology.org/2025.emnlp-main.739/) or [PDF](https://aclanthology.org/2025.emnlp-main.739.pdf) |
+| Explore model behavior | [Interactive heatmap](https://angel-ntu.github.io/ESGenius/heatmap.html) |
+| Download the benchmark | [`data/ESGenius_1136q.csv`](data/ESGenius_1136q.csv) or [`data/ESGenius_1136q.json`](data/ESGenius_1136q.json) |
+| Use source-grounded references | [`data/ESGenius_w_ref_1136q.csv`](data/ESGenius_w_ref_1136q.csv) |
+| Reproduce evaluations | [Evaluation guide](docs/evaluation.md) |
+| Cite the work | [BibTeX](#citation) or [CITATION.cff](CITATION.cff) |
 
 ## Why ESGenius?
 
