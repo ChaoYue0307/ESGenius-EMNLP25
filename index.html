@@ -30,7 +30,6 @@
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="#dataset">Dataset</a>
       <a href="#results">Results</a>
-      <a href="#code">Code</a>
       <a href="https://aclanthology.org/2025.emnlp-main.739/">Paper</a>
       <a href="#heatmap">Heatmap</a>
     </nav>
@@ -195,32 +194,6 @@
               <span>Easiest questions</span>
             </span>
           </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="code" class="section section-tint" aria-labelledby="code-title">
-      <div class="section-inner">
-        <div class="section-heading align-left">
-          <p class="section-label">Evaluation Code</p>
-          <h2 id="code-title">Three evaluation paths, one shared utility layer.</h2>
-        </div>
-        <div class="workflow-grid">
-          <article class="workflow-card">
-            <h3>Open-source models</h3>
-            <p>Run Hugging Face causal language models locally with deterministic generation settings and batch-level result saving.</p>
-            <code>python eval_opensource.py --dataset ESGenius_1136q.csv</code>
-          </article>
-          <article class="workflow-card">
-            <h3>Reference-aware RAG</h3>
-            <p>Use the reference CSV to prepend source snippets before generation, keeping retrieval behavior simple and inspectable.</p>
-            <code>python eval_opensource_rag.py --dataset ESGenius_w_ref_1136q.csv</code>
-          </article>
-          <article class="workflow-card">
-            <h3>Qwen API</h3>
-            <p>Evaluate Dashscope-compatible Qwen models through the API path with retry handling and Excel reporting.</p>
-            <code>python eval_qwen_api.py --dataset ESGenius_1136q.csv</code>
-          </article>
         </div>
       </div>
     </section>

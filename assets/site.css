@@ -697,42 +697,6 @@ figcaption {
   background-blend-mode: normal, normal, multiply, normal;
 }
 
-.workflow-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 36px;
-}
-
-.workflow-card {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  min-height: 260px;
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--paper);
-}
-
-.workflow-card p {
-  margin: 0;
-  color: var(--muted);
-}
-
-code {
-  display: block;
-  margin-top: auto;
-  padding: 12px;
-  border-radius: 6px;
-  color: #f4fff9;
-  background: #17362f;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 13px;
-  line-height: 1.45;
-  overflow-x: auto;
-}
-
 .citation-panel {
   min-width: 0;
   padding: 20px;
@@ -859,7 +823,6 @@ code {
   .hero-inner,
   .stats-band,
   .two-column,
-  .workflow-grid,
   .heatmap-home,
   .resources-layout {
     grid-template-columns: 1fr;
@@ -981,10 +944,6 @@ code {
   .schema-row {
     grid-template-columns: 1fr;
     gap: 4px;
-  }
-
-  .workflow-card {
-    min-height: 0;
   }
 
   .heatmap-home {
