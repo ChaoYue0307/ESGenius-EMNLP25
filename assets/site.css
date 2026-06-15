@@ -1095,6 +1095,18 @@ body.paper-project {
   white-space: nowrap;
 }
 
+.paper-authors a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(47, 125, 88, 0.34);
+}
+
+.paper-authors a:hover,
+.paper-authors a:focus-visible {
+  color: var(--green);
+  border-bottom-color: currentColor;
+}
+
 .paper-authors sup,
 .paper-affiliations sup,
 .paper-correspondence sup {
