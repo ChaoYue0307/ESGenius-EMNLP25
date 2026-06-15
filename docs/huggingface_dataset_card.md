@@ -8,6 +8,15 @@ task_categories:
 pretty_name: ESGenius
 size_categories:
   - 1K<n<10K
+configs:
+  - config_name: plain
+    data_files:
+      - split: test
+        path: data/ESGenius_1136q.csv
+  - config_name: reference
+    data_files:
+      - split: test
+        path: data/ESGenius_w_ref_1136q.csv
 tags:
   - esg
   - sustainability
