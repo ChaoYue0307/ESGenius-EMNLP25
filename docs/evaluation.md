@@ -2,6 +2,10 @@
 
 This guide documents the three public evaluation paths in the repository.
 
+The benchmark files are mirrored in this GitHub repository and released on Hugging Face at:
+
+https://huggingface.co/datasets/cy0307/ESGenius
+
 ## Setup
 
 ```bash
@@ -12,6 +16,14 @@ cp .env.example .env
 ```
 
 Fill in only the keys needed for the evaluation path you plan to run.
+
+If starting from the Hugging Face release, download the bundle first:
+
+```bash
+hf download cy0307/ESGenius \
+  --type dataset \
+  --local-dir ESGenius-HF
+```
 
 ## Local Hugging Face Evaluation
 

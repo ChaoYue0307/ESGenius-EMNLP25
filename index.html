@@ -32,6 +32,7 @@
   <meta name="citation_conference_title" content="Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing">
   <meta name="citation_doi" content="10.18653/v1/2025.emnlp-main.739">
   <meta name="citation_pdf_url" content="https://aclanthology.org/2025.emnlp-main.739.pdf">
+  <meta name="citation_dataset_url" content="https://huggingface.co/datasets/cy0307/ESGenius">
 
   <link rel="icon" href="assets/esgenius-logo.png">
   <link rel="apple-touch-icon" href="assets/esgenius-logo.png">
@@ -96,7 +97,7 @@
         <nav class="button-row" aria-label="Paper resources">
           <a class="project-button project-button-primary" href="https://aclanthology.org/2025.emnlp-main.739/">ACL Anthology Paper</a>
           <a class="project-button" href="https://github.com/ANGEL-NTU/ESGenius">Code</a>
-          <a class="project-button" href="data/ESGenius_1136q.csv">Dataset</a>
+          <a class="project-button" href="https://huggingface.co/datasets/cy0307/ESGenius">HF Dataset</a>
           <a class="project-button" href="heatmap.html">Heatmap</a>
           <a class="project-button" href="#citation">BibTeX</a>
         </nav>
@@ -145,8 +146,9 @@
       <div class="paper-container two-column-paper">
         <div>
           <h2 id="dataset-title">Dataset</h2>
-          <p>The public release includes plain CSV/JSON files for standard evaluation and a reference-aware CSV for source-grounded inspection or retrieval experiments.</p>
+          <p>The canonical public dataset release is hosted on Hugging Face, with local mirrors retained in this GitHub repository. It includes plain CSV/JSON files for standard evaluation and a reference-aware CSV for source-grounded inspection or retrieval experiments.</p>
           <div class="link-list" aria-label="Dataset files">
+            <a href="https://huggingface.co/datasets/cy0307/ESGenius">Hugging Face dataset</a>
             <a href="data/ESGenius_1136q.csv">Plain CSV</a>
             <a href="data/ESGenius_1136q.json">Plain JSON</a>
             <a href="data/ESGenius_w_ref_1136q.csv">Reference CSV</a>
@@ -243,6 +245,7 @@
         <div class="resource-list">
           <a href="https://aclanthology.org/2025.emnlp-main.739/">Read EMNLP 2025 paper</a>
           <a href="https://doi.org/10.18653/v1/2025.emnlp-main.739">DOI record</a>
+          <a href="https://huggingface.co/datasets/cy0307/ESGenius">Hugging Face dataset and code bundle</a>
           <a href="https://github.com/ANGEL-NTU/ESGenius">View GitHub repository</a>
           <a href="docs/evaluation.md">Evaluation guide</a>
           <a href="data/README.md">Dataset documentation</a>
@@ -253,7 +256,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>ESGenius is maintained by ANGEL-NTU. Static site served from the same GitHub repository.</p>
+    <p>ESGenius is maintained by ANGEL-NTU. Code is on GitHub; the public dataset bundle is on Hugging Face.</p>
     <a href="#top">Back to top</a>
   </footer>
 </body>

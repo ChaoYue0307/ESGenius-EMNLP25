@@ -16,6 +16,7 @@
 <p align="center">
   <a href="https://angel-ntu.github.io/ESGenius/">Project Site</a> |
   <a href="https://angel-ntu.github.io/ESGenius/heatmap.html">Interactive Heatmap</a> |
+  <a href="https://huggingface.co/datasets/cy0307/ESGenius">Hugging Face Dataset</a> |
   <a href="https://aclanthology.org/2025.emnlp-main.739/">ACL Anthology</a> |
   <a href="https://aclanthology.org/2025.emnlp-main.739.pdf">PDF</a> |
   <a href="data/README.md">Dataset Card</a> |
@@ -25,7 +26,7 @@
 <p align="center">
   <a href="https://aclanthology.org/2025.emnlp-main.739/"><img alt="EMNLP 2025 Main Oral" src="https://img.shields.io/badge/EMNLP%202025-Main%20Oral-2f7d58"></a>
   <a href="https://angel-ntu.github.io/ESGenius/"><img alt="Project website" src="https://img.shields.io/badge/Website-GitHub%20Pages-366f8a"></a>
-  <a href="data/ESGenius_1136q.csv"><img alt="Dataset" src="https://img.shields.io/badge/Dataset-1%2C136%20questions-c78a2e"></a>
+  <a href="https://huggingface.co/datasets/cy0307/ESGenius"><img alt="Hugging Face dataset" src="https://img.shields.io/badge/Hugging%20Face-Dataset-c78a2e"></a>
   <a href="https://angel-ntu.github.io/ESGenius/heatmap.html"><img alt="Model results" src="https://img.shields.io/badge/Models-50%20evaluated-12372f"></a>
   <a href="LICENSE"><img alt="License Apache 2.0" src="https://img.shields.io/badge/License-Apache--2.0-blue"></a>
 </p>
@@ -41,6 +42,7 @@ ESGenius is an expert multiple-choice benchmark for evaluating whether large lan
 | Read the paper | [ACL Anthology](https://aclanthology.org/2025.emnlp-main.739/) or [PDF](https://aclanthology.org/2025.emnlp-main.739.pdf) |
 | Open the project page | [angel-ntu.github.io/ESGenius](https://angel-ntu.github.io/ESGenius/) |
 | Inspect model-question outcomes | [Interactive heatmap](https://angel-ntu.github.io/ESGenius/heatmap.html) |
+| Use the Hugging Face release | [cy0307/ESGenius](https://huggingface.co/datasets/cy0307/ESGenius) |
 | Download the plain benchmark | [`data/ESGenius_1136q.csv`](data/ESGenius_1136q.csv) or [`data/ESGenius_1136q.json`](data/ESGenius_1136q.json) |
 | Use source-grounded references | [`data/ESGenius_w_ref_1136q.csv`](data/ESGenius_w_ref_1136q.csv) |
 | Reproduce evaluations | [Evaluation guide](docs/evaluation.md) |
@@ -57,6 +59,7 @@ ESGenius is an expert multiple-choice benchmark for evaluating whether large lan
 | Answer protocol | `A`, `B`, `C`, `D`, plus `Z` for "Not sure" |
 | Evaluated models | 50 models with aggregate rankings and question-level heatmap results |
 | Reference support | Source document names, page references, and supporting excerpts |
+| Hugging Face release | [`cy0307/ESGenius`](https://huggingface.co/datasets/cy0307/ESGenius) |
 | License | Apache 2.0 |
 
 ## Why ESGenius?
@@ -92,6 +95,7 @@ General factual benchmarks do not fully capture the domain-specific demands of E
 | [`data/ESGenius_w_ref_1136q.csv`](data/ESGenius_w_ref_1136q.csv) | Reference-aware benchmark with source metadata |
 | [`data/README.md`](data/README.md) | Dataset schema and usage notes |
 | [`docs/evaluation.md`](docs/evaluation.md) | Detailed evaluation workflow guide |
+| [`docs/huggingface_dataset_card.md`](docs/huggingface_dataset_card.md) | Source dataset card used for the Hugging Face release |
 | [`evaluation_utils.py`](evaluation_utils.py) | Shared loading, prompting, parsing, metrics, and export utilities |
 | [`eval_opensource.py`](eval_opensource.py) | Local Hugging Face model evaluation |
 | [`eval_opensource_rag.py`](eval_opensource_rag.py) | Reference-aware prompting evaluation |
@@ -100,9 +104,19 @@ General factual benchmarks do not fully capture the domain-specific demands of E
 | [`results/`](results) | Published result images and evaluation outputs |
 | [`CITATION.cff`](CITATION.cff) | Citation metadata |
 
+## Hugging Face Release
+
+The canonical public benchmark bundle is hosted at [cy0307/ESGenius](https://huggingface.co/datasets/cy0307/ESGenius). It contains the dataset files, dataset documentation, citation metadata, license, and lightweight evaluation scripts so users can download the benchmark from the Hugging Face Hub while using GitHub for source development and the project site.
+
+```bash
+hf download cy0307/ESGenius \
+  --type dataset \
+  --local-dir ESGenius-HF
+```
+
 ## Dataset
 
-The public dataset lives in [`data/`](data). Use the plain files for standard model evaluation and the reference-aware file for audit or retrieval experiments.
+The public dataset lives in [`data/`](data) and is mirrored on [Hugging Face](https://huggingface.co/datasets/cy0307/ESGenius). Use the plain files for standard model evaluation and the reference-aware file for audit or retrieval experiments.
 
 | File | Use |
 | --- | --- |
@@ -187,6 +201,7 @@ The project site follows a paper-project format and keeps the homepage lightweig
 
 - [Project homepage](https://angel-ntu.github.io/ESGenius/)
 - [Interactive heatmap](https://angel-ntu.github.io/ESGenius/heatmap.html)
+- [Hugging Face dataset](https://huggingface.co/datasets/cy0307/ESGenius)
 - [ACL Anthology record](https://aclanthology.org/2025.emnlp-main.739/)
 
 <p align="center">

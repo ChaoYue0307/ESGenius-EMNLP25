@@ -2,6 +2,10 @@
 
 This directory contains the public ESGenius question set in CSV and JSON formats.
 
+The canonical Hugging Face dataset release is available at:
+
+https://huggingface.co/datasets/cy0307/ESGenius
+
 ## Files
 
 - `ESGenius_1136q.csv`: plain benchmark questions.
@@ -35,3 +39,4 @@ The reference CSV includes the plain schema plus:
 - The evaluation scripts normalize predictions to uppercase option labels.
 - Use `ESGenius_w_ref_1136q.csv` for retrieval-augmented or citation-aware experiments.
 - Keep the `Z` option in prompts. It is part of the benchmark protocol.
+- Use the Hugging Face release for stable public download links and Dataset Viewer access; use the GitHub repository for source development and the project website.

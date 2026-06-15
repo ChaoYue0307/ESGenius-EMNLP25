@@ -30,7 +30,15 @@ date-released: "2025-11-01"
 doi: 10.18653/v1/2025.emnlp-main.739
 url: "https://aclanthology.org/2025.emnlp-main.739/"
 repository-code: "https://github.com/ANGEL-NTU/ESGenius"
+repository-artifact: "https://huggingface.co/datasets/cy0307/ESGenius"
 license: Apache-2.0
+keywords:
+  - ESG
+  - sustainability
+  - benchmark
+  - large language models
+  - model evaluation
+  - Hugging Face dataset
 preferred-citation:
   type: conference-paper
   title: "ESGenius: Benchmarking LLMs on Environmental, Social, and Governance (ESG) and Sustainability Knowledge"
