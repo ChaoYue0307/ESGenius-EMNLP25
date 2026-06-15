@@ -1057,6 +1057,15 @@ body.paper-project {
   white-space: nowrap;
 }
 
+.paper-authors sup,
+.paper-affiliations sup,
+.paper-correspondence sup {
+  color: var(--green);
+  font-size: 0.72em;
+  font-weight: 800;
+  line-height: 0;
+}
+
 .paper-authors span + span::before {
   content: "|";
   margin: 0 10px;
@@ -1065,9 +1074,27 @@ body.paper-project {
 }
 
 .paper-affiliations {
-  margin: 0 auto 18px;
+  max-width: 920px;
+  margin: 0 auto 4px;
   color: var(--muted);
   font-size: 14.5px;
+  line-height: 1.45;
+}
+
+.paper-correspondence,
+.paper-proceedings {
+  max-width: 880px;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+.paper-correspondence {
+  margin: 0 auto 6px;
+}
+
+.paper-proceedings {
+  margin: 0 auto 18px;
 }
 
 .paper-tagline {
