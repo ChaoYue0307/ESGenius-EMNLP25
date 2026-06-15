@@ -1022,14 +1022,22 @@ body.paper-project {
 }
 
 .paper-title {
-  max-width: 920px;
+  max-width: 1040px;
   margin: 0 auto 22px;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 4.6vw, 48px);
+  font-size: clamp(30px, 3.85vw, 42px);
   font-weight: 700;
   line-height: 1.16;
   letter-spacing: 0;
+}
+
+.paper-title-line {
+  display: block;
+}
+
+.paper-title-nowrap {
+  white-space: nowrap;
 }
 
 .paper-authors {
@@ -1294,6 +1302,10 @@ body.paper-project {
 
   .paper-title {
     font-size: 34px;
+  }
+
+  .paper-title-nowrap {
+    white-space: normal;
   }
 
   .paper-authors span + span::before {
