@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ESGenius | ESG and Sustainability LLM Benchmark</title>
+  <title>ESGenius | EMNLP 2025 Main Oral</title>
   <meta name="description" content="ESGenius is an EMNLP 2025 Main Conference Oral benchmark of 1,136 expert ESG and sustainability questions for evaluating LLM knowledge across major reporting, climate, and sustainability frameworks.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://angel-ntu.github.io/ESGenius/">
@@ -14,12 +14,31 @@
   <meta property="og:image" content="https://angel-ntu.github.io/ESGenius/figures/main_results.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#12372f">
+
+  <meta name="citation_title" content="ESGenius: Benchmarking LLMs on Environmental, Social, and Governance (ESG) and Sustainability Knowledge">
+  <meta name="citation_author" content="He, Chaoyue">
+  <meta name="citation_author" content="Zhou, Xin">
+  <meta name="citation_author" content="Wu, Yi">
+  <meta name="citation_author" content="Yu, Xinjia">
+  <meta name="citation_author" content="Zhang, Yan">
+  <meta name="citation_author" content="Zhang, Lei">
+  <meta name="citation_author" content="Wang, Di">
+  <meta name="citation_author" content="Lyu, Shengfei">
+  <meta name="citation_author" content="Xu, Hong">
+  <meta name="citation_author" content="Wang, Xiaoqiao">
+  <meta name="citation_author" content="Liu, Wei">
+  <meta name="citation_author" content="Miao, Chunyan">
+  <meta name="citation_publication_date" content="2025/11">
+  <meta name="citation_conference_title" content="Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing">
+  <meta name="citation_doi" content="10.18653/v1/2025.emnlp-main.739">
+  <meta name="citation_pdf_url" content="https://aclanthology.org/2025.emnlp-main.739.pdf">
+
   <link rel="icon" href="assets/esgenius-logo.png">
   <link rel="apple-touch-icon" href="assets/esgenius-logo.png">
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/site.js" defer></script>
 </head>
-<body>
+<body class="paper-project">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" aria-label="Site header">
@@ -28,108 +47,97 @@
       <span>ESGenius</span>
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#abstract">Abstract</a>
       <a href="#dataset">Dataset</a>
       <a href="#results">Results</a>
-      <a href="https://aclanthology.org/2025.emnlp-main.739/">Paper</a>
       <a href="#heatmap">Heatmap</a>
+      <a href="#citation">Citation</a>
     </nav>
   </header>
 
   <main id="main">
-    <section id="top" class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <div class="hero-title-lockup">
-            <img class="hero-logo" src="assets/esgenius-logo.png" alt="" aria-hidden="true">
-            <h1 id="hero-title">ESGenius</h1>
-          </div>
-          <p class="hero-subtitle">An expert benchmark for evaluating LLM knowledge of ESG and sustainability standards.</p>
-          <p class="hero-copy">Source-grounded questions, reproducible evaluation code, and question-level model analysis for sustainability reporting, climate, governance, and standards-driven reasoning.</p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="heatmap.html">Open interactive heatmap</a>
-            <a class="button button-secondary" href="#dataset">Get dataset</a>
-          </div>
+    <section id="top" class="paper-hero" aria-labelledby="paper-title">
+      <div class="paper-container">
+        <p class="venue-chip"><span>EMNLP 2025</span> Main Conference Oral | Resource and Theme Paper Award nominations (Top 1%)</p>
+        <img class="paper-logo" src="assets/esgenius-logo.png" alt="ESGenius logo">
+        <h1 id="paper-title" class="paper-title">ESGenius: Benchmarking LLMs on Environmental, Social, and Governance (ESG) and Sustainability Knowledge</h1>
+
+        <p class="paper-authors">
+          <span>Chaoyue He</span>
+          <span>Xin Zhou</span>
+          <span>Yi Wu</span>
+          <span>Xinjia Yu</span>
+          <span>Yan Zhang</span>
+          <span>Lei Zhang</span>
+          <span>Di Wang</span>
+          <span>Shengfei Lyu</span>
+          <span>Hong Xu</span>
+          <span>Xiaoqiao Wang</span>
+          <span>Wei Liu</span>
+          <span>Chunyan Miao</span>
+        </p>
+        <p class="paper-affiliations">Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, Suzhou, China</p>
+        <p class="paper-tagline">An expert, source-grounded benchmark for evaluating whether LLMs understand sustainability reporting, climate disclosure, governance, and standards-driven ESG reasoning.</p>
+
+        <nav class="button-row" aria-label="Paper resources">
+          <a class="project-button project-button-primary" href="https://aclanthology.org/2025.emnlp-main.739/">Paper</a>
+          <a class="project-button" href="https://aclanthology.org/2025.emnlp-main.739.pdf">PDF</a>
+          <a class="project-button" href="https://github.com/ANGEL-NTU/ESGenius">Code</a>
+          <a class="project-button" href="data/ESGenius_1136q.csv">Dataset</a>
+          <a class="project-button" href="heatmap.html">Heatmap</a>
+          <a class="project-button" href="#citation">BibTeX</a>
+        </nav>
+      </div>
+    </section>
+
+    <figure class="teaser paper-container">
+      <img src="figures/main_results.png" alt="Main ESGenius benchmark results">
+      <figcaption>ESGenius evaluates 50 language models across 1,136 expert ESG and sustainability questions, with source-grounded references and question-level inspection support.</figcaption>
+    </figure>
+
+    <section id="abstract" class="paper-section" aria-labelledby="abstract-title">
+      <div class="paper-container">
+        <h2 id="abstract-title">Abstract</h2>
+        <p class="abstract-text">Large language models are increasingly used for sustainability reporting, climate disclosure, and ESG analysis, yet their knowledge of specialized standards and source-dependent concepts remains difficult to evaluate systematically. ESGenius provides a 1,136-question multiple-choice benchmark covering environmental, social, governance, and sustainability knowledge across major reporting and climate frameworks. Each question follows an A-D answer protocol with a Z option for uncertainty, and the reference version includes source document metadata and supporting excerpts for audit or retrieval-augmented evaluation. The repository includes dataset files, evaluation scripts, published result figures, and an interactive 50-model heatmap for model-question diagnostics.</p>
+      </div>
+    </section>
+
+    <section class="paper-section paper-section-soft" aria-labelledby="benchmark-title">
+      <div class="paper-container">
+        <h2 id="benchmark-title">Benchmark Overview</h2>
+        <div class="metric-grid">
+          <div class="metric-card"><strong>1,136</strong><span>expert ESG questions</span></div>
+          <div class="metric-card"><strong>50</strong><span>evaluated models</span></div>
+          <div class="metric-card"><strong>7</strong><span>framework families</span></div>
+          <div class="metric-card"><strong>A-D + Z</strong><span>answer protocol</span></div>
         </div>
-
-        <aside class="paper-spotlight" aria-labelledby="paper-title">
-          <div class="paper-summary">
-            <p class="section-label">Publication</p>
-            <h2 id="paper-title" class="publication-title">EMNLP 2025 Main Conference Oral</h2>
-            <p class="publication-recognition">Nominated for Resource and Theme Paper Awards (Top 1%).</p>
-          </div>
-
-          <div class="paper-title-card" aria-label="Paper title">
-            <span class="status-icon status-icon-conference" aria-hidden="true">
-              <svg viewBox="0 0 48 48" role="img" focusable="false">
-                <path d="M12 10h24a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z" fill="none" stroke="currentColor" stroke-width="3"/>
-                <path d="M15 18h18M15 24h18M15 30h12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                <path d="M35 35l5 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <div class="paper-title-copy">
-              <span>Paper title</span>
-              <strong>ESGenius: Benchmarking LLMs on Environmental, Social, and Governance (ESG) and Sustainability Knowledge</strong>
-            </div>
-          </div>
-
-          <div class="paper-links" aria-label="Paper links">
-            <a class="publication-link" href="https://aclanthology.org/2025.emnlp-main.739/">ACL Anthology</a>
-            <a class="publication-link" href="https://aclanthology.org/2025.emnlp-main.739.pdf">Download PDF</a>
-          </div>
-
-          <div class="citation-panel citation-panel-top" aria-labelledby="citation-title">
-            <div class="citation-panel-header">
-              <h3 id="citation-title">BibTeX</h3>
-              <button class="copy-button" type="button" data-copy-target="emnlp-bibtex">Copy BibTeX</button>
-            </div>
-            <pre><code id="emnlp-bibtex" class="citation-code">@inproceedings{he-etal-2025-esgenius,
-  title = "{ESG}enius: Benchmarking {LLM}s on Environmental, Social, and Governance ({ESG}) and Sustainability Knowledge",
-  author = "He, Chaoyue and Zhou, Xin and Wu, Yi and Yu, Xinjia and Zhang, Yan and Zhang, Lei and Wang, Di and Lyu, Shengfei and Xu, Hong and Xiaoqiao, Wang and Liu, Wei and Miao, Chunyan",
-  editor = "Christodoulopoulos, Christos and Chakraborty, Tanmoy and Rose, Carolyn and Peng, Violet",
-  booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
-  month = nov,
-  year = "2025",
-  address = "Suzhou, China",
-  publisher = "Association for Computational Linguistics",
-  url = "https://aclanthology.org/2025.emnlp-main.739/",
-  doi = "10.18653/v1/2025.emnlp-main.739",
-  pages = "14612--14653",
-  ISBN = "979-8-89176-332-6"
-}</code></pre>
-          </div>
-        </aside>
+        <div class="project-cards">
+          <article class="project-card">
+            <h3>Standards-aware scope</h3>
+            <p>Covers sustainability reporting, climate disclosure, biodiversity, energy, governance, and ESG reasoning across IPCC, GRI, SASB, ISO, IFRS/ISSB, TCFD, and CDP sources.</p>
+          </article>
+          <article class="project-card">
+            <h3>Source-grounded references</h3>
+            <p>The reference CSV preserves document names, page references, and supporting text snippets so answers can be audited or used in retrieval-aware experiments.</p>
+          </article>
+          <article class="project-card">
+            <h3>Diagnostic evaluation</h3>
+            <p>Published figures summarize aggregate performance, while the full heatmap exposes per-question outcomes, invalid outputs, uncertainty, and missing responses.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="stats-band" aria-label="Benchmark summary">
-      <div class="stat">
-        <strong>1,136</strong>
-        <span>questions</span>
-      </div>
-      <div class="stat">
-        <strong>50</strong>
-        <span>models evaluated</span>
-      </div>
-      <div class="stat">
-        <strong>7</strong>
-        <span>framework families</span>
-      </div>
-      <div class="stat">
-        <strong>A-D + Z</strong>
-        <span>answer protocol</span>
-      </div>
-    </section>
-
-    <section id="dataset" class="section section-light" aria-labelledby="dataset-title">
-      <div class="section-inner two-column">
-        <div class="section-copy">
-          <p class="section-label">Dataset</p>
-          <h2 id="dataset-title">Expert ESG knowledge, packaged for repeatable model evaluation.</h2>
-          <p>The benchmark covers sustainability reporting, climate disclosure, biodiversity, energy, governance, and standards-driven ESG reasoning across IPCC, GRI, SASB, ISO, IFRS/ISSB, TCFD, and CDP sources.</p>
+    <section id="dataset" class="paper-section" aria-labelledby="dataset-title">
+      <div class="paper-container two-column-paper">
+        <div>
+          <h2 id="dataset-title">Dataset</h2>
+          <p>The public release includes plain CSV/JSON files for standard evaluation and a reference-aware CSV for source-grounded inspection or retrieval experiments.</p>
           <div class="link-list" aria-label="Dataset files">
             <a href="data/ESGenius_1136q.csv">Plain CSV</a>
             <a href="data/ESGenius_1136q.json">Plain JSON</a>
             <a href="data/ESGenius_w_ref_1136q.csv">Reference CSV</a>
+            <a href="data/README.md">Dataset documentation</a>
           </div>
         </div>
         <div class="schema-panel" aria-label="Dataset schema">
@@ -143,36 +151,24 @@
       </div>
     </section>
 
-    <section id="results" class="section section-white" aria-labelledby="results-title">
-      <div class="section-inner">
-        <div class="section-heading">
-          <p class="section-label">Results</p>
-          <h2 id="results-title">Model performance at a glance, with question-level drill-down.</h2>
-          <p>The homepage loads quickly, while the full Plotly heatmap remains available as a dedicated report for deep inspection.</p>
-        </div>
+    <section id="results" class="paper-section paper-section-soft" aria-labelledby="results-title">
+      <div class="paper-container">
+        <h2 id="results-title">Results</h2>
+        <p class="section-intro">A compact ranking view summarizes the 50-model evaluation. Detailed model-question behavior is available in the full interactive Plotly report.</p>
 
         <figure class="featured-figure">
           <img src="results/ESGenius_balanced_1136q_ranking_bar_chart.png" alt="Ranking bar chart for evaluated ESGenius models">
           <figcaption>Ranking view for evaluated models on the balanced ESGenius question set.</figcaption>
         </figure>
+      </div>
+    </section>
 
-        <div class="figure-explorer" aria-labelledby="figures-title">
-          <div class="figure-controls" role="tablist" aria-label="Figure selector">
-            <button class="figure-button is-active" type="button" data-figure="main" role="tab" aria-selected="true">Main results</button>
-            <button class="figure-button" type="button" data-figure="size" role="tab" aria-selected="false">Accuracy vs size</button>
-            <button class="figure-button" type="button" data-figure="questions" role="tab" aria-selected="false">Question terms</button>
-            <button class="figure-button" type="button" data-figure="sources" role="tab" aria-selected="false">Source terms</button>
-          </div>
-          <figure class="figure-stage">
-            <img id="figure-image" src="figures/main_results.png" alt="Main ESGenius benchmark results">
-            <figcaption id="figure-caption">Main ESGenius benchmark results.</figcaption>
-          </figure>
-        </div>
-
-        <div id="heatmap" class="heatmap-home" aria-labelledby="heatmap-title">
+    <section id="heatmap" class="paper-section" aria-labelledby="heatmap-title">
+      <div class="paper-container">
+        <h2 id="heatmap-title">Interactive Heatmap</h2>
+        <div class="heatmap-home">
           <div class="heatmap-home-copy">
-            <p class="section-label">Interactive Heatmap</p>
-            <h3 id="heatmap-title">Inspect every model-question outcome without leaving the benchmark story.</h3>
+            <h3>Inspect every model-question outcome.</h3>
             <p>The full report covers 50 evaluated models across 1,136 ESGenius questions, sorted by model rank and question difficulty for fast error-pattern analysis.</p>
             <div class="heatmap-legend" aria-label="Heatmap color key">
               <span><i class="key-correct"></i>Correct</span>
@@ -181,7 +177,7 @@
               <span><i class="key-unsure"></i>Not sure</span>
               <span><i class="key-missing"></i>Missing</span>
             </div>
-            <a class="button button-dark" href="heatmap.html">Open full Plotly heatmap</a>
+            <a class="project-button project-button-primary" href="heatmap.html">Open full Plotly heatmap</a>
           </div>
           <a class="heatmap-preview" href="heatmap.html" aria-label="Open the full ESGenius interactive heatmap report">
             <span class="heatmap-preview-top">
@@ -198,11 +194,38 @@
       </div>
     </section>
 
-    <section class="section section-white" aria-labelledby="resources-title">
-      <div class="section-inner resources-layout">
+    <section id="citation" class="paper-section" aria-labelledby="citation-title">
+      <div class="paper-container">
+        <h2 id="citation-title">Citation</h2>
+        <p>If you use ESGenius, please cite the EMNLP 2025 paper and repository metadata.</p>
+        <div class="citation-panel citation-panel-project">
+          <div class="citation-panel-header">
+            <h3>BibTeX</h3>
+            <button class="copy-button" type="button" data-copy-target="emnlp-bibtex">Copy BibTeX</button>
+          </div>
+          <pre><code id="emnlp-bibtex" class="citation-code">@inproceedings{he-etal-2025-esgenius,
+  title = "{ESG}enius: Benchmarking {LLM}s on Environmental, Social, and Governance ({ESG}) and Sustainability Knowledge",
+  author = "He, Chaoyue and Zhou, Xin and Wu, Yi and Yu, Xinjia and Zhang, Yan and Zhang, Lei and Wang, Di and Lyu, Shengfei and Xu, Hong and Xiaoqiao, Wang and Liu, Wei and Miao, Chunyan",
+  editor = "Christodoulopoulos, Christos and Chakraborty, Tanmoy and Rose, Carolyn and Peng, Violet",
+  booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+  month = nov,
+  year = "2025",
+  address = "Suzhou, China",
+  publisher = "Association for Computational Linguistics",
+  url = "https://aclanthology.org/2025.emnlp-main.739/",
+  doi = "10.18653/v1/2025.emnlp-main.739",
+  pages = "14612--14653",
+  ISBN = "979-8-89176-332-6"
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section paper-section-soft" aria-labelledby="resources-title">
+      <div class="paper-container resources-layout">
         <div>
-          <p class="section-label">Resources</p>
-          <h2 id="resources-title">Everything needed to inspect and reproduce the benchmark.</h2>
+          <h2 id="resources-title">Resources</h2>
+          <p>Everything needed to inspect, reproduce, and cite the benchmark.</p>
         </div>
         <div class="resource-list">
           <a href="https://aclanthology.org/2025.emnlp-main.739/">Read EMNLP 2025 paper</a>
